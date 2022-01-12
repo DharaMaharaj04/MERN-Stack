@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "name": "Dhara Maharaj",
+      "username": "Dhara",
+      "email": "dhara@scriptics.ai",
+      "phone": "4563214530",
+      "id": 1
+    },
+    {
+      "name": "Pooja Amin",
+      "username": "Pooja",
+      "email": "causerie9vad@gmail.com",
+      "phone": "123456787890",
+      "id": 2
+    },
+    {
+      "name": "Bhakti Bhatt",
+      "username": "Bhakti",
+      "email": "bhakti@gmail.com",
+      "phone": "13585874890",
+      "id": 3
+    },
+    {
+      "name": "Vaibhavi Shah",
+      "username": "vaibhavi",
+      "email": "vaibhavi@gmail.com",
+      "phone": "1489096",
+      "id": 4
+    },
+    {
+      "name": "Viraj Jani",
+      "username": "viraj",
+      "email": "viraj@gmail.com",
+      "phone": "14890",
+      "id": 5
+    }
+  ]
+}
