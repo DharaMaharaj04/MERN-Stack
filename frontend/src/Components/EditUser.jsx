@@ -7,7 +7,8 @@ const initialValue = {
     name: '',
     username: '',
     email: '',
-    phone: ''
+    phone: '',
+    image: ''
 }
 
 const useStyles = makeStyles({
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
 
 const EditUser = () => {
     const [user, setUser] = useState(initialValue);
-    const { name, username, email, phone } = user;
+    const { name, username, email, phone, image } = user;
     const { id } = useParams();
     const classes = useStyles();
     let history = useHistory();
@@ -51,19 +52,23 @@ const EditUser = () => {
             <Typography variant="h4">Edit Information</Typography>
             <FormControl>
                 <InputLabel htmlFor="my-input">Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" aria-describedby="my-helper-text" />
+                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" aria-describedby="my-helper-text" required />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Username</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='username' value={username} id="my-input" aria-describedby="my-helper-text" />
+                <Input onChange={(e) => onValueChange(e)} name='username' value={username} id="my-input" aria-describedby="my-helper-text" required="true" />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input" aria-describedby="my-helper-text" />
+                <Input type='email' onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input" aria-describedby="my-helper-text" required />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Phone</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" aria-describedby="my-helper-text" />
+                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" aria-describedby="my-helper-text" required />
+            </FormControl>
+            <FormControl>
+                <InputLabel htmlFor="my-input">Upload Image</InputLabel>
+                <Input type='file' onChange={(e) => onValueChange(e)} name='image' value={image} id="my-input" aria-describedby="my-helper-text" />
             </FormControl>
             <FormControl>
                 <Button variant="contained" color="primary" onClick={() => editUserDetails()}>Edit User</Button>

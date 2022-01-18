@@ -24,7 +24,7 @@ export const getUsers = async (request, response) => {
             await newUser.save();
             response.status(201).json(newUser);
         } catch (error){
-            response.status(409).json({ message: error.message});     
+            response.status(409).json({ message: error.message  > 0});     
         }
     }
     

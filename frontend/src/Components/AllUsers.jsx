@@ -50,6 +50,7 @@ const AllUsers = () => {
                     <TableCell>Username</TableCell>
                     <TableCell>Email</TableCell>
                     <TableCell>Phone</TableCell>
+                    <TableCell>Image</TableCell>
                     <TableCell></TableCell>
                 </TableRow>
             </TableHead>
@@ -61,6 +62,7 @@ const AllUsers = () => {
                         <TableCell>{user.username}</TableCell>
                         <TableCell>{user.email}</TableCell>
                         <TableCell>{user.phone}</TableCell>
+                        <TableCell>{user.image}</TableCell>
                         <TableCell>
                             <Button  variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${user._id}`} >Edit</Button> 
                             <Button  variant="contained" onClick={() => deleteUserData(user._id)}>Delete</Button> 

@@ -7,7 +7,8 @@ const initialValue = {
     name: '',
     username: '',
     email: '',
-    phone: ''
+    phone: '',
+    image: ''
 }
 
 const useStyles = makeStyles({
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
 
 const AddUser = () => {
         const [user, setUser] = useState(initialValue);
-        const { name, username, email, phone } = user;
+        const { name, username, email, phone, image } = user;
         const classes = useStyles();
         let history = useHistory();
 
@@ -43,19 +44,23 @@ const AddUser = () => {
             <Typography variant="h4">Add User</Typography>
             <FormControl>
                 <InputLabel htmlFor="my-input">Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" />
+                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" required={true} />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Username</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='username' value={username} id="my-input" />
+                <Input onChange={(e) => onValueChange(e)} name='username' value={username} id="my-input" required/>
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input"/>
+                <Input type='email' onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input" required />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Phone</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" />
+                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" required />
+            </FormControl>
+            <FormControl>
+                <InputLabel htmlFor="my-input">Upload Image</InputLabel>
+                <Input type='file' onChange={(e) => onValueChange(e)} name='image' className="image" value={image} id="my-input" aria-describedby="my-helper-text" />
             </FormControl>
             <FormControl>
                 <Button variant="contained" color="primary" onClick={() => addUserDeatils()} >Add User</Button>
